@@ -1,0 +1,35 @@
+export default class Cl_mPersonal {
+  private _nombre: string = "";
+  private _tipo: number = 0;
+  private _salarioBase: number = 0;
+  private _peso: number = 0;
+
+  constructor(
+    { nombre, tipo, salario, peso}: { nombre: string; tipo: number; salario: number; peso: number} = {
+      nombre: "",
+      tipo: 0,
+      salario: 0,
+      peso: 0,
+    }
+  ) {
+    this.nombre = nombre;
+    this.tipo = tipo;
+    this.salarioBase = salario
+    this.peso= peso
+  }
+
+  set nombre(nombre: string) { this._nombre = nombre; }
+  get nombre(): string { return this._nombre; }
+
+  set tipo(tipo: number) { this._tipo = +tipo; }
+  get tipo(): number { return this._tipo; }
+
+  set salarioBase(salario: number) { this._salarioBase = +salario; }
+  get salarioBase(): number { return this._salarioBase; }
+
+  get salarioTotal(): number {
+    return this.salarioBase;
+  }
+   set peso(peso: number) { this._peso = +peso; }
+  get peso(): number { return this._peso; }
+}

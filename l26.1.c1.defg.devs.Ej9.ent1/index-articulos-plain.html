@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa Artículos - Plain</title>
+</head>
+<body>
+    <div id="body">
+        <section id="articulo" hidden>
+            <h5>Procesar Artículo</h5>
+            <div>
+                <label>Código: <input type="number" id="articulo_inCodigo" placeholder="888"></label>
+            </div>
+            <div>
+                <label>Costo: <input type="number" id="articulo_inCosto" placeholder="Ej: 100"></label>
+            </div>
+            <div>
+                <label>Precio de Venta: <input type="number" id="articulo_inVenta" placeholder="Ej: 150"></label>
+            </div>
+            <div>
+                <button id="articulo_btCancelar">Cancelar</button>
+                <button id="articulo_btAceptar">Aceptar</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <button id="body_btProcesarArticulo">Procesar Artículo</button>
+
+         <div>La ganancia será de Bs. <span id="body_lblGanancia">0</span></div>
+        <div>El artículo con mayor precio de venta es: <span id="body_lblArticuloMayor">0</span></div>
+          </div>
+
+    <script type="module">
+        import Cl_cEmpresaArticulos from "./dist/controllers/Cl_cEmpresaArticulos.js";
+        import Cl_cArticulo from "./dist/controllers/Cl_cArticulo.js";
+        import Cl_vEmpresaArticulosPlain from "./dist/views/Cl_vEmpresaArticulosPlain.js";
+        import Cl_vArticuloPlain from "./dist/views/Cl_vArticuloPlain.js";
+
+        const vistaEmpresa = new Cl_vEmpresaArticulosPlain();
+        const vistaArticulo = new Cl_vArticuloPlain();
+        const controladorArticulo = new Cl_cArticulo(vistaArticulo);
+        new Cl_cEmpresaArticulos(vistaEmpresa, controladorArticulo);
+    </script>
+</body>
+</html>
